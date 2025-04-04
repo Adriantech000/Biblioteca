@@ -11,10 +11,8 @@ public class App {
     ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 
     public void cadastroDePessoa() {
-        System.out.println("Quantas pessoas quer adicionar?");
-        int qnt = scanner.nextInt();
-
-        for (int i = 0; i < qnt; i++) {
+        int qnt = 0;
+        do {
 
             System.out.println("Digite o nome do usuário:");
             String nome = scanner.nextLine();
@@ -30,7 +28,10 @@ public class App {
             Pessoa novaPessoa = new Pessoa(nome, cpf, id, telefone);
             listaPessoa.add(novaPessoa);
 
-        }
+            System.out.println("Quer adicionar mais pessoas? (0-continuar)(1-parar)");
+            qnt = scanner.nextInt();
+
+        }while(qnt == 0);
 
     }
 
@@ -47,6 +48,7 @@ public class App {
 
         System.out.println("BIBLIOTECA!");
         System.out.println("1-Cadastrar Pessoa");
+        System.out.println("2-Mostrar Pessoas");
         int escolha = app.scanner.nextInt();
 
         switch (escolha) {
@@ -63,6 +65,7 @@ public class App {
                 break;
             default:
                 System.out.println("Opção invalida.");
-        }
+            }
+
     }
 }

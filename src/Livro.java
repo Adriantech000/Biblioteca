@@ -16,16 +16,25 @@ public class Livro {
     public String getNome() {
         return nome;
     }
+
     public String getAutor() {
         return autor;
     }
-    public int getAnoPubli(){
+
+    public int getAnoPubli() {
         return anoPubli;
     }
+
     public boolean isDisponivel() {
         return disponivel;
     }
-    public void setDisponivel(Boolean disponivel){
+
+    public void setDisponivel(Boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + ", CPF: " + autor + ", ID: " + anoPubli + ", Telefone: " + disponivel;
     }
 }
