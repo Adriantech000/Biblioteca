@@ -1,4 +1,6 @@
+
 public class Pessoa {
+
     private String nome;
     private String cpf;
     private int id;
@@ -10,6 +12,7 @@ public class Pessoa {
         this.id = id;
         this.tel = tel;
     }
+
     public String getNome() {
         return nome;
     }
@@ -42,5 +45,9 @@ public class Pessoa {
         this.tel = tel;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Nome: " + nome + ", CPF: " + cpf + ", ID: " + id + ", Telefone: " + tel;
+    }
+
 }
