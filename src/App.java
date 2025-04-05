@@ -72,6 +72,8 @@ public class App {
         Pessoa escolhaPessoa = listaPessoa.get(escolha);
         Livro livroParaEmprestar = listaLivro.get(escolhali);
 
+        livroParaEmprestar.setDono(escolhaPessoa);
+
         livroParaEmprestar.setDisponivel(false);
         System.out.println("Livro '" + livroParaEmprestar.getNome() + "' emprestado para " + escolhaPessoa.getNome() + ".");
     }
@@ -83,17 +85,24 @@ public class App {
             System.out.println(pessoa);
         }
     }
+    public void mostrarLivro(){
+        System.out.println("Lista de livros cadastradas:");
+        //lista para mostrar as pessoas na lista.
+        for (Livro listaLivro : listaLivro) {
+            System.out.println(listaLivro);
+        }
+    }
 
     public static void main(String[] args) throws Exception {
         App app = new App();
         int opcao;
-
         do {
             System.out.println("\n=== MENU BIBLIOTECA ===");
             System.out.println("1 - Cadastrar Pessoa");
             System.out.println("2 - Mostrar Pessoas");
             System.out.println("3 - Adicionar Livro");
-            System.out.println("4 - Emprestar Livro para a Última Pessoa");
+            System.out.println("4 - Emprestar Livro");
+            System.out.println("5 - Mostrar Livros");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -116,6 +125,9 @@ public class App {
                     break;
                 case 4:
                     app.emprestarLivroUltimaPessoa();
+                    break;
+                case 5:
+                    app.mostrarLivro();
                     break;
                 case 0:
                     System.out.println("Saindo do programa...");

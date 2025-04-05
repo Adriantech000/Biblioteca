@@ -15,6 +15,7 @@ public class Livro {
         this.nome = nome;
         this.autor = autor;
         this.anoPubli = anoPubli;
+        this.codi = gerarCodigo();
         this.disponivel = true;
     }
 
@@ -56,7 +57,7 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + ", CPF: " + autor + ", ID: " + anoPubli + ", Telefone: " + disponivel + ", Dono:" + dono;
+        return "Nome: " + nome + ", CPF: " + autor + ", ID: " + anoPubli + ", Disponivel?: " + disponivel + ", Dono:   " + dono;
     }
 
     public int gerarCodigo() {
